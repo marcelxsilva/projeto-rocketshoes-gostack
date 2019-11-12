@@ -1,6 +1,8 @@
 > ## RocketShoes
 
-## Bibliotecas utilizadas
+Para exemplificar os conceitos da arquitetura flux, foi criado uma aplicação que simula um ecommerce.
+
+### Bibliotecas utilizadas
 
 #### react router dom 
 responsavel por manipular o roteamento da aplicação
