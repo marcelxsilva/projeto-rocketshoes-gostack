@@ -10,3 +10,16 @@ Para estilização dos componentes
 
 #### react-icons - [Saiba Mais](https://react-icons.netlify.com/#/)
 Fornecer alguns icones para o projeto
+
+
+#### polished 
+Utilizada para manipular tonalidades de cores no css, como no exemplo,(Utilizado no Styled Components)
+```Javascript
+import { darken } from 'polished';
+
+div {
+  &:hover {
+            background: ${darken(0.05, '#7159c1')}
+    }
+}
+```
