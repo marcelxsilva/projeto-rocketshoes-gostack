@@ -2,7 +2,7 @@
 
 Para exemplificar os conceitos da arquitetura flux, foi criado uma aplicação que simula um ecommerce.
 
-### Bibliotecas utilizadas
+> ### Bibliotecas utilizadas
 
 #### react router dom 
 responsavel por manipular o roteamento da aplicação
@@ -28,3 +28,6 @@ div {
 
 #### json-server
 Cria um api fake, baseada em um arquivo json. [Saiba mais](https://github.com/typicode/json-server)
+
+#### react-redux e redux
+Utilizados para o gerenciamento do estado global da aplicação.
