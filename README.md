@@ -25,3 +25,6 @@ div {
     }
 }
 ```
+
+#### json-server
+Cria um api fake, baseada em um arquivo json. [Saiba mais](https://github.com/typicode/json-server)
