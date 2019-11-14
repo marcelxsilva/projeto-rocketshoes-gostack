@@ -4,6 +4,7 @@ import { Container, Cart } from './styles';
 import logo from '../../assets/images/logo.svg';
 import { connect } from 'react-redux';
 import { MdShoppingBasket } from 'react-icons/md'
+
 function Header({ cartSize }) {
     return (
         <Container>
