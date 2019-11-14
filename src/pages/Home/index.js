@@ -6,7 +6,7 @@ import api from '../../services/api';
 import { formatPrice } from '../../utils/format';
 import { addProductToCart } from '../../store/modules/Cart/actions';
 
-function Home({ dispatch }) {
+function Home({ dispatch, amount }) {
   const [dataStore, setDataStore] = useState({
     products: [],
   });
@@ -35,7 +35,9 @@ function Home({ dispatch }) {
             <strong>{product.title}</strong>
             <span className='price'>{product.priceFormated}</span>
             <button type='button' onClick={() => handleAddProduct(product)}>
-              <div><MdAddShoppingCart size='16' color='#fff' />{3}</div>
+              <div><MdAddShoppingCart size='16' color='#fff' />{
+                amount[product.id] || 0
+              }</div>
               <span>Adicionar ao Carrinho</span>
             </button>
           </li>
@@ -45,4 +47,11 @@ function Home({ dispatch }) {
   );
 }
 
-export default connect()(Home)
+const mapStateToProps = state => ({
+  amount: state.cart.reduce((amount, product) => {
+    amount[product.id] = product.amount;
+    return amount;
+  }, { })
+});
+
+export default connect(mapStateToProps)(Home)
