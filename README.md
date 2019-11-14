@@ -2,6 +2,10 @@
 
 Para exemplificar os conceitos da arquitetura flux, foi criado uma aplicação que simula um ecommerce.
 
+> ##  Resultado
+
+<img src='./1.png' width='300'>
+<img src='./2.png' width='300'>
 > ### Bibliotecas utilizadas
 
 #### react router dom 
@@ -47,3 +51,4 @@ biblioteca utilizada para exibir notificações ao usuário.
 
 #### history
 utilizada para controlar a history API do navegador, podendo redirecionar o usuário para algumas rotas.
+
