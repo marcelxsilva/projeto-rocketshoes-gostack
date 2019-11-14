@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { ProductList } from './styles';
 import api from '../../services/api';
 import { formatPrice } from '../../utils/format';
+import { addProductToCart } from '../../store/modules/Cart/actions';
 
 function Home({ dispatch }) {
   const [dataStore, setDataStore] = useState({
@@ -23,10 +24,7 @@ function Home({ dispatch }) {
   }
 
   const handleAddProduct = product => {
-    dispatch({
-      type: 'ADD_TO_CART',
-      product
-    })
+    dispatch(addProductToCart(product))
   }
   return (
     <ProductList>
@@ -46,4 +44,5 @@ function Home({ dispatch }) {
     </ProductList>
   );
 }
+
 export default connect()(Home)
