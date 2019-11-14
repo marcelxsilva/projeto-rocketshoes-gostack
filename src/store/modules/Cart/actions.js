@@ -13,3 +13,11 @@ export const removeProductFromCart = (id) => {
         id: id
     }
 }
+
+export const updateAmount = (id, amount) => {
+    return {
+        type: '@cart/UPDATE_AMOUNT',
+        id, 
+        amount
+    }
+} 
