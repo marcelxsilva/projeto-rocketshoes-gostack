@@ -4,8 +4,8 @@ Para exemplificar os conceitos da arquitetura flux, foi criado uma aplicação q
 
 > ##  Resultado
 
-<img src='./1.png' width='300'>
-<img src='./2.png' width='300'>
+<img src='./1.png' width='500'>
+<img src='./2.png' width='500'>
 > ### Bibliotecas utilizadas
 
 #### react router dom 
