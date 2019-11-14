@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { ProductList } from './styles';
 import api from '../../services/api';
 import { formatPrice } from '../../utils/format';
-import { addProductToCart } from '../../store/modules/Cart/actions';
+import { addProductToCartRequest } from '../../store/modules/Cart/actions';
 
 function Home({ dispatch, amount }) {
   const [dataStore, setDataStore] = useState({
@@ -23,8 +23,8 @@ function Home({ dispatch, amount }) {
     setDataStore({ ...dataStore, products: data });
   }
 
-  const handleAddProduct = product => {
-    dispatch(addProductToCart(product))
+  const handleAddProduct = id => {
+    dispatch(addProductToCartRequest(id))
   }
   return (
     <ProductList>
@@ -34,7 +34,7 @@ function Home({ dispatch, amount }) {
             <img src={product.image} alt={product.title} />
             <strong>{product.title}</strong>
             <span className='price'>{product.priceFormated}</span>
-            <button type='button' onClick={() => handleAddProduct(product)}>
+            <button type='button' onClick={() => handleAddProduct(product.id)}>
               <div><MdAddShoppingCart size='16' color='#fff' />{
                 amount[product.id] || 0
               }</div>
@@ -51,7 +51,7 @@ const mapStateToProps = state => ({
   amount: state.cart.reduce((amount, product) => {
     amount[product.id] = product.amount;
     return amount;
-  }, { })
+  }, {})
 });
 
 export default connect(mapStateToProps)(Home)

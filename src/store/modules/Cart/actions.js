@@ -1,9 +1,16 @@
 
 
-export const addProductToCart = (product) => {
+export const addProductToCartRequest = (id) => {
     return {
-        type: '@cart/ADD',
-        product
+        type: '@cart/ADD_REQUEST',
+        id,
+    }
+}
+
+export const addProductToCartSuccess = (product) => {
+    return {
+        type: '@cart/ADD_SUCCESS',
+        product,
     }
 }
 
