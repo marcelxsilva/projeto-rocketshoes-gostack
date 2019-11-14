@@ -1,4 +1,5 @@
 import api from '../../../services/api';
+import history from '../../../services/history';
 import { toast } from 'react-toastify';
 import { formatPrice } from '../../../utils/format';
 import { call, put, all, takeLatest, select } from 'redux-saga/effects';
@@ -31,7 +32,8 @@ function* addProductToCart({ id }) {
             amount: 1,
             priceFormatted: formatPrice(response.data.price)
         }
-        yield put(addProductToCartSuccess(data))
+        yield put(addProductToCartSuccess(data));
+        history.push('/cart')
     }
 }
 
